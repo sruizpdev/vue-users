@@ -1,13 +1,13 @@
 <template>
   <div id="secure">
     <form>
-      <input type="text" v-model="company" />
+      <input type="text" v-model="company" placeholder="Introduce compañía" />
       <button v-on:click="getUsers">Search</button>
     </form>
     <div>
       <table className="table">
         <thead>
-          <tr>
+          <tr v-if="users !== null">
             <th>Avatar</th>
             <th>Id</th>
             <th>Name</th>
@@ -40,7 +40,7 @@ export default {
 
   data() {
     return {
-      users: [],
+      users: null,
       company: '',
       error: false,
       mock: [],
@@ -78,7 +78,42 @@ export default {
   margin-top: 10px;
 }
 .imagen {
-  width: 100px;
+  width: 50px;
   border-radius: 1rem;
+}
+th {
+  color: green;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+td {
+  color: orange;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+}
+button {
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin-left: 50px;
+  padding: 1rem;
+  width: 250px;
+}
+button:hover {
+  background-color: grey;
+  cursor: pointer;
+  border: none;
+}
+input {
+  font-size: 1rem;
+  margin: 10px 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #cccccc;
+
+  padding: 1rem;
 }
 </style>

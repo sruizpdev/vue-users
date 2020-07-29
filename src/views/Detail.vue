@@ -4,8 +4,8 @@
     <p>id: {{ user.id }}</p>
     <p>login: {{ user.login }}</p>
     <img class="imagen" :src="user.avatar_url" alt="" />
-    <p>company: {user.company}</p>
-    <router-link to="/secure">{{ user.login }}Back to list</router-link>
+
+    <router-link to="/secure" class="volver">Back to search >>></router-link>
   </div>
 </template>
 
@@ -30,3 +30,30 @@ export default {
   },
 };
 </script>
+<style scoped>
+#detail {
+  border: 1px solid gray;
+  padding: 10px 30px;
+  background-color: white;
+  width: 400px;
+  margin-top: 50px;
+}
+h2,
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p {
+  font-weight: bold;
+}
+.imagen {
+  width: 200px;
+  display: block;
+  margin-bottom: 50px;
+}
+.volver {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+</style>
